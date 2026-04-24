@@ -1,0 +1,317 @@
+Sender: LSF System <lsfadmin@eng29.ipa.ambiqmicro.local>
+Subject: Job 934335: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng29.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Thu Apr  9 10:28:40 2026
+Results reported on Thu Apr  9 10:29:52 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               32.62 sec.
+    Max Memory :             43 MB
+    Average Memory :         41.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               192 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 09, 2026 at 10:28:40 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/adc_capture.v
+	module worklib.adc_capture:v
+		errors: 0, warnings: 0
+file: rtl/cic_filter.v
+	module worklib.cic_filter:v
+		errors: 0, warnings: 0
+file: rtl/hb1_fir.v
+	module worklib.hb1_fir:v
+		errors: 0, warnings: 0
+file: rtl/hb19_mux.v
+	module worklib.hb19_mux:v
+		errors: 0, warnings: 0
+file: rtl/lpf_fir.v
+	module worklib.lpf_fir:v
+		errors: 0, warnings: 0
+file: rtl/dga.v
+	module worklib.dga:v
+		errors: 0, warnings: 0
+file: rtl/hpf.v
+	module worklib.hpf:v
+		errors: 0, warnings: 0
+file: rtl/osr_top.v
+	module worklib.osr_top:v
+		errors: 0, warnings: 0
+file: tb/osr_tb.sv
+	module worklib.osr_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		osr_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.hpf:v <0x2d0602a1>
+			streams:   9, words:  2931
+		worklib.dga:v <0x70222ff1>
+			streams:   6, words:  2154
+		worklib.lpf_fir:v <0x0770669d>
+			streams:  14, words: 34691
+		worklib.hb19_mux:v <0x6b0014b6>
+			streams:  26, words: 55571
+		worklib.hb1_fir:v <0x3b021a49>
+			streams:  12, words: 13129
+		worklib.cic_filter:v <0x6ea09332>
+			streams:  16, words:  4976
+		worklib.adc_capture:v <0x4e3d5683>
+			streams:   6, words:  2108
+		worklib.osr_top:v <0x3db2c5e3>
+			streams:   1, words:   127
+		worklib.osr_tb:sv <0x4d068a1c>
+			streams:  12, words: 17579
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              70      70
+		Scalar wires:           10       -
+		Vectored wires:         45       -
+		Always blocks:          13      13
+		Initial blocks:          3       3
+		Cont. assignments:      31      32
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.osr_tb:sv
+Loading snapshot worklib.osr_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+=== Running mode swb ===
+  swb: 3200 output samples collected (expected ~3200)
+=== Running mode wb ===
+  wb: 1600 output samples collected (expected ~1600)
+=== Running mode nb ===
+  nb: 800 output samples collected (expected ~800)
+=== All modes complete ===
+Simulation complete via $finish(1) at time 600491464040 PS + 0
+./tb/osr_tb.sv:132     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 09, 2026 at 10:29:51 CDT  (total: 00:01:11)
+Sender: LSF System <lsfadmin@eng27.ipa.ambiqmicro.local>
+Subject: Job 934428: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng27.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Thu Apr  9 10:42:28 2026
+Results reported on Thu Apr  9 10:43:17 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               20.39 sec.
+    Max Memory :             49 MB
+    Average Memory :         49.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               362 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 09, 2026 at 10:42:29 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file './rtl/adc_capture.v' is newer than expected.
+	expected: Wed Apr  8 15:39:17 2026
+	actual:   Thu Apr  9 10:42:29 2026
+file: tb/osr_tb.sv
+	module worklib.osr_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		osr_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.osr_tb:sv <0x488c3233>
+			streams:  12, words: 17328
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              70      70
+		Scalar wires:           10       -
+		Vectored wires:         45       -
+		Always blocks:          13      13
+		Initial blocks:          3       3
+		Cont. assignments:      31      32
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.osr_tb:sv
+Loading snapshot worklib.osr_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+=== Running mode swb ===
+  swb: 3200 output samples collected (expected ~3200)
+=== Running mode wb ===
+  wb: 1600 output samples collected (expected ~1600)
+=== Running mode nb ===
+  nb: 800 output samples collected (expected ~800)
+=== All modes complete ===
+Simulation complete via $finish(1) at time 600491464040 PS + 0
+./tb/osr_tb.sv:129     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 09, 2026 at 10:43:17 CDT  (total: 00:00:48)
+Sender: LSF System <lsfadmin@eng29.ipa.ambiqmicro.local>
+Subject: Job 935618: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng29.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Thu Apr  9 12:58:21 2026
+Results reported on Thu Apr  9 12:59:18 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               15.36 sec.
+    Max Memory :             49 MB
+    Average Memory :         49.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               157 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 09, 2026 at 12:58:21 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file './rtl/adc_capture.v' is newer than expected.
+	expected: Wed Apr  8 15:39:17 2026
+	actual:   Thu Apr  9 12:58:24 2026
+file: tb/osr_tb.sv
+	module worklib.osr_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		osr_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.osr_tb:sv <0x38fe8623>
+			streams:  17, words: 37664
+		worklib.hpf:v <0x114f5adb>
+			streams:   9, words:  2931
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              86      86
+		Scalar wires:           10       -
+		Vectored wires:         45       -
+		Always blocks:          14      14
+		Initial blocks:          3       3
+		Cont. assignments:      31      32
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.osr_tb:sv
+Loading snapshot worklib.osr_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+=== THD+N Tests: 1kHz @ -3dBFS ===
+  THD+N swb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+  THD+N wb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+  THD+N nb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+=== Frequency Response Sweeps @ -3dBFS ===
+  NB sweep...
+    nb 100 Hz: amp=1503  ovf=0
+    nb 150 Hz: amp=1499  ovf=0
+    nb 200 Hz: amp=791  ovf=0
+    nb 300 Hz: amp=520  ovf=0
+    nb 500 Hz: amp=238  ovf=0
+    nb 1000 Hz: amp=283  ovf=0
+    nb 1400 Hz: amp=213  ovf=0
+    nb 2000 Hz: amp=22  ovf=0
+    nb 2800 Hz: amp=274  ovf=0
+    nb 3000 Hz: amp=420  ovf=0
+    nb 3200 Hz: amp=233  ovf=0
+    nb 3400 Hz: amp=288  ovf=0
+  WB sweep...
+    wb 100 Hz: amp=1742  ovf=0
+    wb 150 Hz: amp=1587  ovf=0
+    wb 200 Hz: amp=1592  ovf=0
+    wb 300 Hz: amp=1543  ovf=0
+    wb 500 Hz: amp=603  ovf=0
+    wb 1000 Hz: amp=329  ovf=0
+    wb 2000 Hz: amp=151  ovf=0
+    wb 3000 Hz: amp=432  ovf=0
+    wb 4000 Hz: amp=197  ovf=0
+    wb 5000 Hz: amp=332  ovf=0
+    wb 6000 Hz: amp=340  ovf=0
+    wb 6400 Hz: amp=293  ovf=0
+    wb 6700 Hz: amp=435  ovf=0
+  SWB sweep...
+    swb 100 Hz: amp=1863  ovf=0
+    swb 150 Hz: amp=1804  ovf=0
+    swb 200 Hz: amp=1698  ovf=0
+    swb 300 Hz: amp=1646  ovf=0
+    swb 500 Hz: amp=1647  ovf=0
+    swb 1000 Hz: amp=840  ovf=0
+    swb 2000 Hz: amp=353  ovf=0
+    swb 4000 Hz: amp=530  ovf=0
+    swb 6000 Hz: amp=597  ovf=0
+    swb 8000 Hz: amp=456  ovf=0
+    swb 10000 Hz: amp=593  ovf=0
+    swb 11000 Hz: amp=917  ovf=0
+    swb 12000 Hz: amp=590  ovf=0
+    swb 14000 Hz: amp=481  ovf=0
+=== All tests complete ===
+Simulation complete via $finish(1) at time 4887070008600 PS + 0
+./tb/osr_tb.sv:242     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 09, 2026 at 12:59:18 CDT  (total: 00:00:57)

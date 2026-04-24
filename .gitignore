@@ -1,9 +1,8 @@
-*.zip
 *.vcd
-sim.log
-sim_results*/
 xcelium.d/
 *.shm/
 *.key
-*.log
 __pycache__/
+fv/
+genus.cmd*
+genus.invs*

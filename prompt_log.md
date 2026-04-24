@@ -101,3 +101,11 @@ make a directory and unzip syn_results_0423_1832
 ## Prompt 25 — 2026-04-23
 
 Make me a zipefil of this project which I can unzip elsewhere and have another LLM push it to a new github repo. Include all source code, inputs, outputs, prompts, issues... everything.
+
+## Prompt 26 — 2026-04-23
+
+Where are the simulation reports and plots? Where are the sim results? Why were they gitignored?
+
+## Prompt 27 — 2026-04-23
+
+Yes, give me 1 zipfile I can push to GH

@@ -1,0 +1,204 @@
+Sender: LSF System <lsfadmin@eng26.ipa.ambiqmicro.local>
+Subject: Job 69705: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng26.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Thu Apr 23 20:08:18 2026
+Results reported on Thu Apr 23 20:09:07 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/osr_tb.sv -top osr_tb
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               48.25 sec.
+    Max Memory :             39 MB
+    Average Memory :         39.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               608 MB
+    Max Processes :          3
+    Max Threads :            4
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 23, 2026 at 20:08:18 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file './tb/osr_tb.sv' is newer than expected.
+	expected: Fri Apr 10 19:07:31 2026
+	actual:   Thu Apr 23 11:55:46 2026
+file: tb/osr_tb.sv
+	module worklib.osr_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		osr_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.osr_tb:sv <0x16d9285e>
+			streams:  27, words: 107758
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:             173     173
+		Scalar wires:           10       -
+		Vectored wires:         46       -
+		Always blocks:          15      15
+		Initial blocks:          2       2
+		Cont. assignments:      32      33
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.osr_tb:sv
+Loading snapshot worklib.osr_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+=== THD+N Tests: 1kHz @ -3dBFS ===
+  THD+N swb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+  [PASS] THD+N swb: 4096 samples, 0 overflows
+  THD+N wb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+  [PASS] THD+N wb: 4096 samples, 0 overflows
+  THD+N nb: 1kHz @ -3dBFS ...
+    captured=4096  overflows=0
+  [PASS] THD+N nb: 4096 samples, 0 overflows
+=== Frequency Response Sweeps @ -3dBFS ===
+  NB sweep...
+    nb 100 Hz: amp=27515  ovf=0
+    nb 150 Hz: amp=25982  ovf=0
+    nb 200 Hz: amp=24028  ovf=0
+    nb 300 Hz: amp=21704  ovf=0
+    nb 500 Hz: amp=16628  ovf=0
+    nb 1000 Hz: amp=17293  ovf=0
+    nb 1400 Hz: amp=19790  ovf=0
+    nb 2000 Hz: amp=15630  ovf=0
+    nb 2800 Hz: amp=21038  ovf=0
+    nb 3000 Hz: amp=16673  ovf=0
+    nb 3200 Hz: amp=14193  ovf=0
+    nb 3400 Hz: amp=9841  ovf=0
+  WB sweep...
+    wb 100 Hz: amp=26475  ovf=0
+    wb 150 Hz: amp=24615  ovf=0
+    wb 200 Hz: amp=22433  ovf=0
+    wb 300 Hz: amp=21076  ovf=0
+    wb 500 Hz: amp=17702  ovf=0
+    wb 1000 Hz: amp=16620  ovf=0
+    wb 2000 Hz: amp=16677  ovf=0
+    wb 3000 Hz: amp=16042  ovf=0
+    wb 4000 Hz: amp=16011  ovf=0
+    wb 5000 Hz: amp=16771  ovf=0
+    wb 6000 Hz: amp=15187  ovf=0
+    wb 6400 Hz: amp=15670  ovf=0
+    wb 6700 Hz: amp=13620  ovf=0
+  SWB sweep...
+    swb 100 Hz: amp=12735  ovf=0
+    swb 150 Hz: amp=16623  ovf=0
+    swb 200 Hz: amp=18797  ovf=0
+    swb 300 Hz: amp=20984  ovf=0
+    swb 500 Hz: amp=22360  ovf=0
+    swb 1000 Hz: amp=22594  ovf=0
+    swb 2000 Hz: amp=20661  ovf=0
+    swb 4000 Hz: amp=18094  ovf=0
+    swb 6000 Hz: amp=19511  ovf=0
+    swb 8000 Hz: amp=16296  ovf=0
+    swb 10000 Hz: amp=17006  ovf=0
+    swb 11000 Hz: amp=17885  ovf=0
+    swb 12000 Hz: amp=19218  ovf=0
+    swb 14000 Hz: amp=14711  ovf=0
+=== ITU-T P.50 Distortion (SDR via Goertzel) ===
+  NB P.50...
+    Freq sweep @ -16 dBm0:
+      315 Hz: SDR=59.2 dB  ovf=0  PASS
+      408 Hz: SDR=99.0 dB  ovf=0  PASS
+      510 Hz: SDR=60.1 dB  ovf=0  PASS
+      816 Hz: SDR=30.0 dB  ovf=0  PASS
+      1020 Hz: SDR=61.7 dB  ovf=0  PASS
+    Level sweep @ 1020 Hz:
+      -6 dBm0: SDR=72.2 dB  ovf=0  PASS
+      -10 dBm0: SDR=66.9 dB  ovf=0  PASS
+      -16 dBm0: SDR=61.7 dB  ovf=0  PASS
+      -20 dBm0: SDR=58.5 dB  ovf=0  PASS
+      -25 dBm0: SDR=53.0 dB  ovf=0  PASS
+      -31 dBm0: SDR=48.2 dB  ovf=0  PASS
+  [PASS] P.50 nb
+  WB P.50...
+    Freq sweep @ -16 dBm0:
+      200 Hz: SDR=58.2 dB  ovf=0  PASS
+      315 Hz: SDR=58.5 dB  ovf=0  PASS
+      408 Hz: SDR=99.0 dB  ovf=0  PASS
+      510 Hz: SDR=58.9 dB  ovf=0  PASS
+      816 Hz: SDR=99.0 dB  ovf=0  PASS
+      1020 Hz: SDR=59.5 dB  ovf=0  PASS
+      1600 Hz: SDR=63.2 dB  ovf=0  PASS
+      2000 Hz: SDR=55.0 dB  ovf=0  PASS
+    Level sweep @ 1020 Hz:
+      -6 dBm0: SDR=69.9 dB  ovf=0  PASS
+      -10 dBm0: SDR=64.8 dB  ovf=0  PASS
+      -16 dBm0: SDR=59.5 dB  ovf=0  PASS
+      -20 dBm0: SDR=55.5 dB  ovf=0  PASS
+      -25 dBm0: SDR=50.6 dB  ovf=0  PASS
+      -31 dBm0: SDR=44.2 dB  ovf=0  PASS
+  [PASS] P.50 wb
+  SWB P.50...
+    Freq sweep @ -16 dBm0:
+      200 Hz: SDR=57.3 dB  ovf=0  PASS
+      500 Hz: SDR=57.8 dB  ovf=0  PASS
+      1020 Hz: SDR=58.1 dB  ovf=0  PASS
+      2000 Hz: SDR=60.3 dB  ovf=0  PASS
+      4000 Hz: SDR=48.2 dB  ovf=0  PASS
+      6000 Hz: SDR=65.9 dB  ovf=0  PASS
+      7000 Hz: SDR=64.3 dB  ovf=0  PASS
+      8000 Hz: SDR=54.4 dB  ovf=0  PASS
+    Level sweep @ 1020 Hz:
+      -6 dBm0: SDR=68.4 dB  ovf=0  PASS
+      -10 dBm0: SDR=63.9 dB  ovf=0  PASS
+      -16 dBm0: SDR=58.1 dB  ovf=0  PASS
+      -20 dBm0: SDR=54.5 dB  ovf=0  PASS
+      -25 dBm0: SDR=49.2 dB  ovf=0  PASS
+      -31 dBm0: SDR=42.7 dB  ovf=0  PASS
+  [PASS] P.50 swb
+=== Square-wave Stress Test ===
+    nb sqwave 100 Hz: out=512 ovf=0 PASS
+    nb sqwave 1000 Hz: out=512 ovf=0 PASS
+    nb sqwave 2000 Hz: out=512 ovf=0 PASS
+  [PASS] Squarewave nb
+    wb sqwave 100 Hz: out=512 ovf=0 PASS
+    wb sqwave 1000 Hz: out=512 ovf=0 PASS
+    wb sqwave 2000 Hz: out=512 ovf=0 PASS
+  [PASS] Squarewave wb
+    swb sqwave 100 Hz: out=512 ovf=0 PASS
+    swb sqwave 1000 Hz: out=512 ovf=0 PASS
+    swb sqwave 2000 Hz: out=512 ovf=0 PASS
+  [PASS] Squarewave swb
+=== Mode Switch Test ===
+    nb->wb: rateA=520(exp520) rateB=1041(exp1041) ovf=0 PASS
+    wb->swb: rateA=1041(exp1041) rateB=2083(exp2083) ovf=0 PASS
+    swb->nb: rateA=2083(exp2083) rateB=520(exp520) ovf=0 PASS
+  [PASS] Mode switch
+=== Full-scale 0 dBFS Test ===
+    nb 0dBFS: pk+=7157 pk-=-7157 out=1024 ovf=0 PASS
+    wb 0dBFS: pk+=8548 pk-=-8547 out=1024 ovf=0 PASS
+    swb 0dBFS: pk+=8120 pk-=-8120 out=1024 ovf=0 PASS
+
+============================================
+  SUMMARY: 16 PASS, 0 FAIL (of 16 tests)
+  STATUS: ALL TESTS PASSED
+  Overflows total: checked per-test
+============================================
+Simulation complete via $finish(1) at time 39820719836040 PS + 0
+./tb/osr_tb.sv:675     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 23, 2026 at 20:09:07 CDT  (total: 00:00:49)

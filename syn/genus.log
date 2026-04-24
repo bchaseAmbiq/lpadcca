@@ -1,0 +1,156 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[12:04:55.042898] Configured Lic search path (23.02-s003): 5280@license01:16342@license01:4071@license01:5280@licenseserver:8224@license01:1700@license01:27000@license01:29000@license01:27020@license01:2100@license01
+
+Version: 23.12-s086_1, built Wed Jul 24 17:05:35 PDT 2024
+Options: -batch -files genus_syn.tcl 
+Date:    Fri Apr 10 12:04:55 2026
+Host:    eng28.ipa.ambiqmicro.local (x86_64 w/Linux 4.18.0-553.105.1.el8_10.x86_64) (24cores*96cpus*2physical cpus*AMD EPYC 7F72 24-Core Processor 512KB) (1055885804KB)
+PID:     3633762
+OS:      Red Hat Enterprise Linux release 8.10 (Ootpa)
+LSF:     Job 948008 from queue "carrera_other" on 1 cpu with resource requirements "select[type == local] order[r15s:pg]".
+
+Checking out license: Genus_Synthesis
+[12:04:55.366226] Periodic Lic check successful
+[12:04:55.366241] Feature usage summary:
+[12:04:55.366242] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (21 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source genus_syn.tcl
+#@ Begin verbose source ./genus_syn.tcl
+@file(genus_syn.tcl) 10: set LIB_PATH "/path/to/your/stdcell_typ.lib"
+@file(genus_syn.tcl) 12: set LEF_PATH "/path/to/your/stdcell.lef"
+@file(genus_syn.tcl) 15: set DESIGN    osr_top
+@file(genus_syn.tcl) 16: set CLK_NAME  clk
+@file(genus_syn.tcl) 17: set CLK_FREQ  3.072
+@file(genus_syn.tcl) 18: set CLK_PER   [expr {1000.0 / $CLK_FREQ}]
+@file(genus_syn.tcl) 19: set RTL_PATH  "../rtl"
+@file(genus_syn.tcl) 21: set_db init_lib_search_path [file dirname $LIB_PATH]
+  Setting attribute of root '/': 'init_lib_search_path' = /path/to/your
+@file(genus_syn.tcl) 22: read_libs [file tail $LIB_PATH]
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file 'stdcell_typ.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File 'stdcell_typ.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { stdcell_typ.lib } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./genus_syn.tcl
+1
+Encountered problems processing file: genus_syn.tcl
+
+Lic Summary:
+[12:05:17.280376] Cdslmd servers: license01
+[12:05:17.280395] Feature usage summary:
+[12:05:17.280395] Genus_Synthesis
+
+Sender: LSF System <lsfadmin@eng28.ipa.ambiqmicro.local>
+Subject: Job 948008: <genus -batch -files genus_syn.tcl> in cluster <ambiq-cluster1> Done
+
+Job <genus -batch -files genus_syn.tcl> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng28.ipa.ambiqmicro.local>, in queue <carrera_other>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca/syn> was used as the working directory.
+Started at Fri Apr 10 12:04:50 2026
+Results reported on Fri Apr 10 12:05:18 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+genus -batch -files genus_syn.tcl
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               18.28 sec.
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+
+The output (if any) follows:
+
+TMPDIR is being set to /tmp/genus_temp_3633762_eng28.ipa.ambiqmicro.local_bchase_FToRaE
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[12:04:55.042898] Configured Lic search path (23.02-s003): 5280@license01:16342@license01:4071@license01:5280@licenseserver:8224@license01:1700@license01:27000@license01:29000@license01:27020@license01:2100@license01
+
+Version: 23.12-s086_1, built Wed Jul 24 17:05:35 PDT 2024
+Options: -batch -files genus_syn.tcl 
+Date:    Fri Apr 10 12:04:55 2026
+Host:    eng28.ipa.ambiqmicro.local (x86_64 w/Linux 4.18.0-553.105.1.el8_10.x86_64) (24cores*96cpus*2physical cpus*AMD EPYC 7F72 24-Core Processor 512KB) (1055885804KB)
+PID:     3633762
+OS:      Red Hat Enterprise Linux release 8.10 (Ootpa)
+LSF:     Job 948008 from queue "carrera_other" on 1 cpu with resource requirements "select[type == local] order[r15s:pg]".
+
+Checking out license: Genus_Synthesis
+[12:04:55.366226] Periodic Lic check successful
+[12:04:55.366241] Feature usage summary:
+[12:04:55.366242] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (21 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source genus_syn.tcl
+#@ Begin verbose source ./genus_syn.tcl
+@file(genus_syn.tcl) 10: set LIB_PATH "/path/to/your/stdcell_typ.lib"
+@file(genus_syn.tcl) 12: set LEF_PATH "/path/to/your/stdcell.lef"
+@file(genus_syn.tcl) 15: set DESIGN    osr_top
+@file(genus_syn.tcl) 16: set CLK_NAME  clk
+@file(genus_syn.tcl) 17: set CLK_FREQ  3.072
+@file(genus_syn.tcl) 18: set CLK_PER   [expr {1000.0 / $CLK_FREQ}]
+@file(genus_syn.tcl) 19: set RTL_PATH  "../rtl"
+@file(genus_syn.tcl) 21: set_db init_lib_search_path [file dirname $LIB_PATH]
+  Setting attribute of root '/': 'init_lib_search_path' = /path/to/your
+@file(genus_syn.tcl) 22: read_libs [file tail $LIB_PATH]
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file 'stdcell_typ.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File 'stdcell_typ.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { stdcell_typ.lib } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./genus_syn.tcl
+1
+Encountered problems processing file: genus_syn.tcl
+
+Lic Summary:
+[12:05:17.280376] Cdslmd servers: license01
+[12:05:17.280395] Feature usage summary:
+[12:05:17.280395] Genus_Synthesis
+
+Normal exit.
