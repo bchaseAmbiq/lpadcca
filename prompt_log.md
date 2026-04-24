@@ -109,3 +109,107 @@ Where are the simulation reports and plots? Where are the sim results? Why were 
 ## Prompt 27 — 2026-04-23
 
 Yes, give me 1 zipfile I can push to GH
+
+## Prompt 28 — 2026-04-23
+
+the system is failing both the THD+N and frequency response tests. Check if you agree
+
+## Prompt 29 — 2026-04-23
+
+Yes. Improve the pass criteria for NB and WB. How will the CIC droop compensation affect power consumption?
+
+## Prompt 30 — 2026-04-23
+
+How do I retry all the tests and syn?
+
+## Prompt 31 — 2026-04-23
+
+Check the results in sim*1309 and syn*1307
+
+## Prompt 32 — 2026-04-24
+
+But I need the power <10uW from the input to the FIFO. Analyze ways to rearchitect it for that then let's pick a method and try it.
+
+## Prompt 33 — 2026-04-24
+
+Option 5. Before you do that give me a zipfile I can use to update the gh repo.
+
+## Prompt 34 — 2026-04-24
+
+Go
+
+## Prompt 35 — 2026-04-24
+
+Error: power.vcd not generated
+
+## Prompt 36 — 2026-04-24
+
+ERROR: power.vcd not generated — check vcd_sim.log
+
+## Prompt 37 — 2026-04-24
+
+check /home/bchase/Documents/lpadcca/syn/vcd_sim.log
+
+## Prompt 38 — 2026-04-24
+
+When it's done, what do I do?
+
+## Prompt 39 — 2026-04-24
+
+Where is that file?
+
+## Prompt 40 — 2026-04-24
+
+check syn_vcd_*1528.zip
+
+## Prompt 41 — 2026-04-24
+
+Why did you name it 1630? it's only 1530 in pacific now.
+
+## Prompt 42 — 2026-04-24
+
+Error: power.vcd not generated - check vcd_sim.log. The file is in this directory.
+
+## Prompt 43 — 2026-04-24
+
+check the new vcd_sim.log
+
+## Prompt 44 — 2026-04-24
+
+check vcd_sim.log now.
+
+## Prompt 45 — 2026-04-24
+
+The find returned nothing.
+
+## Prompt 46 — 2026-04-24
+
+Nope. Check saif_sim.log.
+
+## Prompt 47 — 2026-04-24
+
+I put it in the project root.
+
+## Prompt 48 — 2026-04-24
+
+High-level: What are trying to do right now?
+
+## Prompt 49 — 2026-04-24
+
+It's still running, it went to Step 2: Genus synthesis with VCD power ---
+
+## Prompt 50 — 2026-04-24
+
+check syn_vcd_results_0424_1606
+
+## Prompt 51 — 2026-04-24
+
+check syn_vcd_results_0424_1615.zip
+
+## Prompt 52 — 2026-04-24
+
+Yes
+
+## Prompt 53 — 2026-04-24
+
+Where is the latest gh project zip?

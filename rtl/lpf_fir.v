@@ -67,11 +67,22 @@ wire signed [18:0] preadd = (cyc < MID[3:0]) ?
 wire signed [63:0] prod = $signed({{45{preadd[18]}}, preadd}) *
                           $signed({{48{coef_rd[15]}}, coef_rd});
 
+wire dl_en = !busy && din_valid;
+
 integer j;
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         for (j = 0; j < TAPS; j = j + 1)
             dl[j] <= 18'sd0;
+    end else if (dl_en) begin
+        dl[0] <= din;
+        for (j = 1; j < TAPS; j = j + 1)
+            dl[j] <= dl[j-1];
+    end
+end
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         cyc  <= 4'd0;
         busy <= 1'b0;
         acc  <= 64'sd0;
@@ -81,9 +92,6 @@ always @(posedge clk or negedge rst_n) begin
         dout_valid <= 1'b0;
         if (!busy) begin
             if (din_valid) begin
-                dl[0] <= din;
-                for (j = 1; j < TAPS; j = j + 1)
-                    dl[j] <= dl[j-1];
                 cyc  <= 4'd0;
                 acc  <= 64'sd0;
                 busy <= 1'b1;

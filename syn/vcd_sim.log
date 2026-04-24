@@ -1,0 +1,181 @@
+Sender: LSF System <lsfadmin@eng26.ipa.ambiqmicro.local>
+Subject: Job 81555: <xrun -sv -64bit -access +rwc /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng26.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca/syn> was used as the working directory.
+Started at Fri Apr 24 16:40:36 2026
+Results reported on Fri Apr 24 16:41:25 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               30.42 sec.
+    Max Memory :             48 MB
+    Average Memory :         48.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               364 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 24, 2026 at 16:40:37 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v
+	module worklib.adc_capture:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v
+	module worklib.cic_filter:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v
+	module worklib.hb1_fir:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v
+	module worklib.hb19_mux:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v
+	module worklib.lpf_fir:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v
+	module worklib.dga:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v
+	module worklib.hpf:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v
+	module worklib.osr_top:v
+		errors: 0, warnings: 0
+file: /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv
+	module worklib.power_vcd_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		power_vcd_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.hpf:v <0x2d0602a1>
+			streams:   9, words:  2931
+		worklib.dga:v <0x70222ff1>
+			streams:   6, words:  2154
+		worklib.lpf_fir:v <0x58a9c36e>
+			streams:  13, words: 24170
+		worklib.hb19_mux:v <0x6b0014b6>
+			streams:  26, words: 55571
+		worklib.hb1_fir:v <0x3b021a49>
+			streams:  12, words: 13129
+		worklib.cic_filter:v <0x1a09da36>
+			streams:  17, words:  5213
+		worklib.adc_capture:v <0x4e3d5683>
+			streams:   6, words:  2108
+		worklib.osr_top:v <0x54b1d562>
+			streams:   3, words:   683
+		worklib.power_vcd_tb:sv <0x54e4d461>
+			streams:  10, words:  9620
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              62      62
+		Scalar wires:           10       -
+		Vectored wires:         46       -
+		Always blocks:          14      14
+		Initial blocks:          2       2
+		Cont. assignments:      32      33
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.power_vcd_tb:sv
+Loading snapshot worklib.power_vcd_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+power_vcd_tb: 60000 ADC samples -> 156 output samples
+Simulation complete via $finish(1) at time 39063864840 PS + 0
+../tb/power_vcd_tb.sv:74     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 24, 2026 at 16:41:25 CDT  (total: 00:00:48)
+Sender: LSF System <lsfadmin@eng28.ipa.ambiqmicro.local>
+Subject: Job 81698: <xrun -sv -64bit -access +rwc -xmlibdirpath /project_carrera/carrera/work/bchase/lpadcca/syn /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb +VCD_FILE=/project_carrera/carrera/work/bchase/lpadcca/syn/power.vcd> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc -xmlibdirpath /project_carrera/carrera/work/bchase/lpadcca/syn /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb +VCD_FILE=/project_carrera/carrera/work/bchase/lpadcca/syn/power.vcd> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng28.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca/syn> was used as the working directory.
+Started at Fri Apr 24 16:49:58 2026
+Results reported on Fri Apr 24 16:50:47 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc -xmlibdirpath /project_carrera/carrera/work/bchase/lpadcca/syn /project_carrera/carrera/work/bchase/lpadcca/rtl/adc_capture.v /project_carrera/carrera/work/bchase/lpadcca/rtl/cic_filter.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb1_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hb19_mux.v /project_carrera/carrera/work/bchase/lpadcca/rtl/lpf_fir.v /project_carrera/carrera/work/bchase/lpadcca/rtl/dga.v /project_carrera/carrera/work/bchase/lpadcca/rtl/hpf.v /project_carrera/carrera/work/bchase/lpadcca/rtl/osr_top.v /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv -top power_vcd_tb +VCD_FILE=/project_carrera/carrera/work/bchase/lpadcca/syn/power.vcd
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               15.49 sec.
+    Max Memory :             47 MB
+    Average Memory :         47.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               157 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 24, 2026 at 16:49:59 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file '../rtl/adc_capture.v' is newer than expected.
+	expected: Wed Apr  8 15:39:17 2026
+	actual:   Fri Apr 24 16:49:59 2026
+file: /project_carrera/carrera/work/bchase/lpadcca/tb/power_vcd_tb.sv
+	module worklib.power_vcd_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		power_vcd_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.power_vcd_tb:sv <0x05c887b3>
+			streams:  10, words: 10309
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              63      63
+		Scalar wires:           10       -
+		Vectored wires:         46       -
+		Always blocks:          14      14
+		Initial blocks:          2       2
+		Cont. assignments:      32      33
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.power_vcd_tb:sv
+Loading snapshot worklib.power_vcd_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+power_vcd_tb: 60000 ADC samples -> 156 output samples
+Simulation complete via $finish(1) at time 39063864840 PS + 0
+../tb/power_vcd_tb.sv:76     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 24, 2026 at 16:50:47 CDT  (total: 00:00:48)

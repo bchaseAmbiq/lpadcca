@@ -70,7 +70,51 @@ wire signed [63:0] mac =
 
 wire signed [63:0] mac_rnd = (mac + 64'sd16384) >>> 15;
 
+wire dl0_en = (state == S_PUSH) && (cur_stg == 2'd0);
+wire dl1_en = (state == S_PUSH) && (cur_stg == 2'd1);
+wire dl2_en = (state == S_PUSH) && (cur_stg == 2'd2);
+wire dl3_en = (state == S_PUSH) && (cur_stg == 2'd3);
+
 integer k;
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        for (k = 0; k < 19; k = k + 1) dl0[k] <= 18'sd0;
+    end else if (dl0_en) begin
+        dl0[0] <= cur_samp;
+        for (k = 1; k < 19; k = k + 1) dl0[k] <= dl0[k-1];
+    end
+end
+
+integer k1;
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        for (k1 = 0; k1 < 19; k1 = k1 + 1) dl1[k1] <= 18'sd0;
+    end else if (dl1_en) begin
+        dl1[0] <= cur_samp;
+        for (k1 = 1; k1 < 19; k1 = k1 + 1) dl1[k1] <= dl1[k1-1];
+    end
+end
+
+integer k2;
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        for (k2 = 0; k2 < 19; k2 = k2 + 1) dl2[k2] <= 18'sd0;
+    end else if (dl2_en) begin
+        dl2[0] <= cur_samp;
+        for (k2 = 1; k2 < 19; k2 = k2 + 1) dl2[k2] <= dl2[k2-1];
+    end
+end
+
+integer k3;
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        for (k3 = 0; k3 < 19; k3 = k3 + 1) dl3[k3] <= 18'sd0;
+    end else if (dl3_en) begin
+        dl3[0] <= cur_samp;
+        for (k3 = 1; k3 < 19; k3 = k3 + 1) dl3[k3] <= dl3[k3-1];
+    end
+end
+
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         state    <= S_IDLE;
@@ -79,12 +123,6 @@ always @(posedge clk or negedge rst_n) begin
         ph       <= 4'd0;
         dout     <= 18'sd0;
         dout_valid <= 1'b0;
-        for (k = 0; k < 19; k = k + 1) begin
-            dl0[k] <= 18'sd0;
-            dl1[k] <= 18'sd0;
-            dl2[k] <= 18'sd0;
-            dl3[k] <= 18'sd0;
-        end
     end else begin
         dout_valid <= 1'b0;
         case (state)
@@ -96,24 +134,6 @@ always @(posedge clk or negedge rst_n) begin
                 end
             end
             S_PUSH: begin
-                case (cur_stg)
-                    2'd0: begin
-                        dl0[0] <= cur_samp;
-                        for (k = 1; k < 19; k = k + 1) dl0[k] <= dl0[k-1];
-                    end
-                    2'd1: begin
-                        dl1[0] <= cur_samp;
-                        for (k = 1; k < 19; k = k + 1) dl1[k] <= dl1[k-1];
-                    end
-                    2'd2: begin
-                        dl2[0] <= cur_samp;
-                        for (k = 1; k < 19; k = k + 1) dl2[k] <= dl2[k-1];
-                    end
-                    default: begin
-                        dl3[0] <= cur_samp;
-                        for (k = 1; k < 19; k = k + 1) dl3[k] <= dl3[k-1];
-                    end
-                endcase
                 ph[cur_stg] <= ~ph[cur_stg];
                 if (!ph[cur_stg]) begin
                     state <= S_IDLE;

@@ -1,0 +1,70 @@
+Sender: LSF System <lsfadmin@eng28.ipa.ambiqmicro.local>
+Subject: Job 82567: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_vcd_tb -input /project_carrera/carrera/work/bchase/lpadcca/syn/probe_tmp.tcl> in cluster <ambiq-cluster1> Done
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_vcd_tb -input /project_carrera/carrera/work/bchase/lpadcca/syn/probe_tmp.tcl> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng28.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Fri Apr 24 18:10:36 2026
+Results reported on Fri Apr 24 18:11:29 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_vcd_tb -input /project_carrera/carrera/work/bchase/lpadcca/syn/probe_tmp.tcl
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :               15.42 sec.
+    Max Memory :             49 MB
+    Average Memory :         49.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               157 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 24, 2026 at 18:10:39 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file './rtl/adc_capture.v' is newer than expected.
+	expected: Wed Apr  8 15:39:17 2026
+	actual:   Fri Apr 24 18:10:39 2026
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		power_vcd_tb
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              62      62
+		Scalar wires:           10       -
+		Vectored wires:         46       -
+		Always blocks:          14      14
+		Initial blocks:          2       2
+		Cont. assignments:      32      33
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.power_vcd_tb:sv
+Loading snapshot worklib.power_vcd_tb:sv .................... Done
+xcelium> source /tools/cadence/installs/XCELIUM25.03/tools/xcelium/files/xmsimrc
+xcelium> database -open power_db -vcd -into /project_carrera/carrera/work/bchase/lpadcca/syn/power.vcd -default
+Created default VCD database power_db
+xcelium> probe -create power_vcd_tb.u_dut -all -depth all -database power_db
+Created probe 1
+xcelium> run
+power_vcd_tb: 60000 ADC samples -> 156 output samples
+Simulation complete via $finish(1) at time 39063864840 PS + 0
+./tb/power_vcd_tb.sv:71     $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 24, 2026 at 18:11:27 CDT  (total: 00:00:48)

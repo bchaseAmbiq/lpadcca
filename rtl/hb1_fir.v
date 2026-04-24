@@ -34,16 +34,21 @@ always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         for (k = 0; k < 11; k = k + 1)
             dl[k] <= 18'sd0;
+    end else if (din_valid) begin
+        dl[0] <= din;
+        for (k = 1; k < 11; k = k + 1)
+            dl[k] <= dl[k-1];
+    end
+end
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         phase <= 1'b0;
         dout <= 18'sd0;
         dout_valid <= 1'b0;
     end else begin
         dout_valid <= 1'b0;
         if (din_valid) begin
-            dl[0] <= din;
-            for (k = 1; k < 11; k = k + 1)
-                dl[k] <= dl[k-1];
-
             phase <= ~phase;
             if (phase) begin
                 dout_valid <= 1'b1;

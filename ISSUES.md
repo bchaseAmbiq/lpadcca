@@ -21,6 +21,7 @@
 - [x] #15: M55 bare-metal application (see `issues/015_m55_application/`) — `sw/app/main.c`, Makefile, linker.ld
 - [ ] #16: FPGA test image, Stratix 10 (see `issues/016_fpga_test_image/`)
 - [x] #17: Bit-exact RTL vs C model verification (see `issues/017_bit_exact_c_model/`) — `tb/bitexact/` infrastructure
+- [ ] #18: Passband flatness — NB/WB fail freq response (see `issues/018_passband_flatness/`)
 
 ## Closed
 - [x] #11: HPF alpha hardcoded as mode LUT in osr_top, hpf_alpha_q15 port removed

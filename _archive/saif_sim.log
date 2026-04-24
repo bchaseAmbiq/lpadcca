@@ -1,0 +1,93 @@
+Sender: LSF System <lsfadmin@eng28.ipa.ambiqmicro.local>
+Subject: Job 82468: <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_saif_tb> in cluster <ambiq-cluster1> Exited
+
+Job <xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_saif_tb> was submitted from host <vnc5> by user <bchase> in cluster <ambiq-cluster1>.
+Job was executed on host(s) <eng28.ipa.ambiqmicro.local>, in queue <carrera_xcelium>, as user <bchase> in cluster <ambiq-cluster1>.
+</home/bchase> was used as the home directory.
+</project_carrera/carrera/work/bchase/lpadcca> was used as the working directory.
+Started at Fri Apr 24 17:53:34 2026
+Results reported on Fri Apr 24 17:54:21 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+xrun -sv -64bit -access +rwc rtl/adc_capture.v rtl/cic_filter.v rtl/hb1_fir.v rtl/hb19_mux.v rtl/lpf_fir.v rtl/dga.v rtl/hpf.v rtl/osr_top.v tb/power_vcd_tb.sv -top power_saif_tb
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :               25.35 sec.
+    Max Memory :             49 MB
+    Average Memory :         49.00 MB
+    Total Requested Memory : -
+    Delta Memory :           -
+    (Delta: the difference between Total Requested Memory and Max Memory.)
+    Max Swap :               157 MB
+    Max Processes :          4
+    Max Threads :            5
+
+The output (if any) follows:
+
+TOOL:	xrun(64)	25.03-s002: Started on Apr 24, 2026 at 17:53:34 CDT
+xrun(64): 25.03-s002: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+Recompiling... reason: file './rtl/adc_capture.v' is newer than expected.
+	expected: Wed Apr  8 15:39:17 2026
+	actual:   Fri Apr 24 17:53:34 2026
+file: tb/power_vcd_tb.sv
+	module worklib.power_saif_tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		power_saif_tb
+    $set_toggle_region(u_dut);
+                     |
+xmelab: *W,MISSYST (./tb/power_vcd_tb.sv,51|21): Unrecognized system task or function: $set_toggle_region (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+If item was defined in a shared-object library, the problem could be:
+libvpi.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS64 library.
+libpli.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS64 library..
+    $toggle_start();
+                |
+xmelab: *W,MISSYST (./tb/power_vcd_tb.sv,52|16): Unrecognized system task or function: $toggle_start (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+    $toggle_stop();
+               |
+xmelab: *W,MISSYST (./tb/power_vcd_tb.sv,73|15): Unrecognized system task or function: $toggle_stop (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+    $toggle_report("power.saif", 1.0e-12, "power_saif_tb.u_dut");
+                 |
+xmelab: *W,MISSYST (./tb/power_vcd_tb.sv,74|17): Unrecognized system task or function: $toggle_report (did not match built-in or user-defined names) [2.7.4(IEEE Std 1364-2001)].
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.power_saif_tb:sv <0x7279b204>
+			streams:  10, words: 10030
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:              62      62
+		Scalar wires:           10       -
+		Vectored wires:         46       -
+		Always blocks:          14      14
+		Initial blocks:          2       2
+		Cont. assignments:      32      33
+		Pseudo assignments:      9       -
+		Process Clocks:          8       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.power_saif_tb:sv
+Loading snapshot worklib.power_saif_tb:sv .................... Done
+    $set_toggle_region(u_dut);
+                     |
+xmsim: *E,MSSYSTF (./tb/power_vcd_tb.sv,51|21): User Defined system task or function ($set_toggle_region) registered during elaboration and used within the simulation has not been registered during simulation.
+    $toggle_start();
+                |
+xmsim: *E,MSSYSTF (./tb/power_vcd_tb.sv,52|16): User Defined system task or function ($toggle_start) registered during elaboration and used within the simulation has not been registered during simulation.
+    $toggle_stop();
+               |
+xmsim: *E,MSSYSTF (./tb/power_vcd_tb.sv,73|15): User Defined system task or function ($toggle_stop) registered during elaboration and used within the simulation has not been registered during simulation.
+    $toggle_report("power.saif", 1.0e-12, "power_saif_tb.u_dut");
+                 |
+xmsim: *E,MSSYSTF (./tb/power_vcd_tb.sv,74|17): User Defined system task or function ($toggle_report) registered during elaboration and used within the simulation has not been registered during simulation.
+TOOL:	xrun(64)	25.03-s002: Exiting on Apr 24, 2026 at 17:54:21 CDT  (total: 00:00:47)
