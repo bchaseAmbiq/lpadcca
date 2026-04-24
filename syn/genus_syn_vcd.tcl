@@ -31,6 +31,8 @@ set CLK_FREQ  3.072
 set CLK_PER   [expr {1000.0 / $CLK_FREQ}]
 set RTL_PATH  "../rtl"
 
+set_db lp_insert_clock_gating true
+
 read_hdl -v2001 \
     $RTL_PATH/adc_capture.v \
     $RTL_PATH/cic_filter.v \
@@ -56,9 +58,6 @@ set_db optimize_constant_feedback_seqs false
 set_db syn_generic_effort medium
 set_db syn_map_effort medium
 set_db syn_opt_effort medium
-
-set_db lp_insert_clock_gating true
-set_db lp_clock_gating_min_flops 4
 
 syn_generic
 syn_map

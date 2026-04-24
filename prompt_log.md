@@ -213,3 +213,27 @@ Yes
 ## Prompt 53 — 2026-04-24
 
 Where is the latest gh project zip?
+
+## Prompt 54 — 2026-04-24
+
+How are you numbering the osr zipfile? The last 4 digits are supposed to represent pacific time (e.g. it's now 1622).
+
+## Prompt 55 — 2026-04-24
+
+But you just made osr_0424_1630.zip, right? That means April 24, 4:30pm, but it was created at 4:19pm. Don't round off the minutes when you make the filename.
+
+## Prompt 56 — 2026-04-24
+
+check syn_vcd_results_0424_1626
+
+## Prompt 57 — 2026-04-24
+
+check syn_vcd_results_0424_1637
+
+## Prompt 58 — 2026-04-24
+
+Yes, let's run all the sims and if that works make the GH update
+
+## Prompt 59 — 2026-04-24
+
+check sim_results_0424_1645.zip
