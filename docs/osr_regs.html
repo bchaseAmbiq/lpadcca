@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="AmbiqMicro" />
+    <title>OSR Audio Decimation</title>
+    <link href="../resources/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../resources/jquery.js"></script>
+    <script type="text/javascript" src="../resources/dynsections.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css" />
+    <link href="../resources/customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="top">
+        <div id="titlearea">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr style="height: 56px;">
+                        <td id="projectlogo"><img alt="Logo" src="../resources/am_logo.png" /></td>
+                        <td style="padding-left: 0.5em;">
+                            <div id="projectname">OSR  Register Documentation &#160;<span id="projectnumber">v2.0</span></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="navrow1" class="tabs">
+            <ul class="tablist">
+                <li class="current"><a href="../index.html"><span>Main&#160;Page</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header">
+        <div class="headertitle">
+            <div class="title">OSR - Audio Decimation (Oversampling Rate Converter)</div>
+        </div>
+    </div>
+    <body>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"> OSR Register Index</h3>
+            </div>
+            <div class="panel-body">
+                <table>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000000:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#CTRL" target="_self">CTRL - OSR Control</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000004:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#DGA_FRAC" target="_self">DGA_FRAC - DGA Fractional Gain</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000008:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#FIFO_STATUS" target="_self">FIFO_STATUS - FIFO Status</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000000C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#FIFO_DATA" target="_self">FIFO_DATA - FIFO Data Read</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000010:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTEN" target="_self">INTEN - Interrupt Enable</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000014:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTSTAT" target="_self">INTSTAT - Interrupt Status</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000018:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#INTCLR" target="_self">INTCLR - Interrupt Clear</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x0000001C:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#FIFO_THRESH" target="_self">FIFO_THRESH - FIFO Threshold</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000020:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#FIFO_FLUSH" target="_self">FIFO_FLUSH - FIFO Flush</a>
+                        </td>
+                    </tr>
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x00000024:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <a class="el" href="#ID" target="_self">ID - IP Identification</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="CTRL" class="panel-title">CTRL - OSR Control</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010000</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>OSR Control</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="24">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="4">DGASHIFT
+                                <br>0x0</td>
+<td align="center" colspan="1">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="1">EN
+                                <br>0x0</td>
+<td align="center" colspan="2">MODE
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:8</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>7:4</td>
+                            <td>DGASHIFT</td>
+                            <td>RW</td>
+                            <td>DGA barrel-shift exponent (signed 4-bit two's complement, range −8 to +7). Gain = 2^DGASHIFT × DGAFRAC/65536.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>EN</td>
+                            <td>RW</td>
+                            <td>OSR core enable. When cleared, the decimation core is held in reset.<br><br>
+                                 DIS                  = 0x0 - Core held in reset.<br>
+                             EN                   = 0x1 - Core enabled and processing.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>1:0</td>
+                            <td>MODE</td>
+                            <td>RW</td>
+                            <td>Audio output sample-rate mode selection.<br><br>
+                                 NB                   = 0x0 - Narrowband: 8 kHz output.<br>
+                             WB                   = 0x1 - Wideband: 16 kHz output.<br>
+                             SWB                  = 0x2 - Super-wideband: 32 kHz output.<br>
+                             RSVD                 = 0x3 - Reserved (defaults to SWB).<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="DGA_FRAC" class="panel-title">DGA_FRAC - DGA Fractional Gain</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010004</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>DGA Fractional Gain</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="15">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="17">DGAFRAC
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:17</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>16:0</td>
+                            <td>DGAFRAC</td>
+                            <td>RW</td>
+                            <td>Unsigned Q16 fractional gain multiplier (17 bits). Range [65536, 131071] representing 1.0 to ~2.0. DGA computes: out = (in × DGAFRAC) &gt;&gt; 16, then barrel shift from CTRL.DGASHIFT.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="FIFO_STATUS" class="panel-title">FIFO_STATUS - FIFO Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010008</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>FIFO Status</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="24">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="4">COUNT
+                                <br>0x0</td>
+<td align="center" colspan="1">OVF
+                                <br>0x0</td>
+<td align="center" colspan="1">FULL
+                                <br>0x0</td>
+<td align="center" colspan="1">HALF
+                                <br>0x0</td>
+<td align="center" colspan="1">EMPTY
+                                <br>0x1</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:8</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>7:4</td>
+                            <td>COUNT</td>
+                            <td>RO</td>
+                            <td>Number of valid entries in FIFO (0–15 in this 4-bit field; saturates at 15 for count=16).<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>OVF</td>
+                            <td>R/W1C</td>
+                            <td>Overflow (sticky). Set when a write is attempted while FIFO is full. Write 1 to INTCLR[3] or FIFO_STATUS[3] to clear.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>FULL</td>
+                            <td>RO</td>
+                            <td>FIFO full flag. Asserted when count == 16.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>HALF</td>
+                            <td>RO</td>
+                            <td>FIFO half-full flag. Asserted when count &gt;= FIFO_THRESH.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>EMPTY</td>
+                            <td>RO</td>
+                            <td>FIFO empty flag. Asserted when count == 0. Set after reset or flush.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="FIFO_DATA" class="panel-title">FIFO_DATA - FIFO Data Read</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4001000C</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>FIFO Data Read</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="16">SIGN_EXT
+                                <br>0x0</td>
+<td align="center" colspan="16">SAMPLE
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:16</td>
+                            <td>SIGN_EXT</td>
+                            <td>RO</td>
+                            <td>Sign extension of bit 15.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>15:0</td>
+                            <td>SAMPLE</td>
+                            <td>RO</td>
+                            <td>Signed 16-bit PCM audio sample. Reading this register pops one entry from the FIFO.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTEN" class="panel-title">INTEN - Interrupt Enable</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010010</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>Interrupt Enable</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="28">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="1">OVF
+                                <br>0x0</td>
+<td align="center" colspan="1">FULL
+                                <br>0x0</td>
+<td align="center" colspan="1">HALF
+                                <br>0x0</td>
+<td align="center" colspan="1">EMPTY
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:4</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>OVF</td>
+                            <td>RW</td>
+                            <td>Overflow interrupt enable.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>FULL</td>
+                            <td>RW</td>
+                            <td>FIFO full interrupt enable.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>HALF</td>
+                            <td>RW</td>
+                            <td>FIFO half-full interrupt enable.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>EMPTY</td>
+                            <td>RW</td>
+                            <td>FIFO empty interrupt enable.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTSTAT" class="panel-title">INTSTAT - Interrupt Status</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010014</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>Interrupt Status</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="28">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="1">OVF
+                                <br>0x0</td>
+<td align="center" colspan="1">FULL
+                                <br>0x0</td>
+<td align="center" colspan="1">HALF
+                                <br>0x0</td>
+<td align="center" colspan="1">EMPTY
+                                <br>0x1</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:4</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>OVF</td>
+                            <td>RO</td>
+                            <td>Overflow flag (mirrors FIFO_STATUS.OVF).<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>FULL</td>
+                            <td>RO</td>
+                            <td>FIFO full flag.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>HALF</td>
+                            <td>RO</td>
+                            <td>FIFO half-full flag.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>EMPTY</td>
+                            <td>RO</td>
+                            <td>FIFO empty flag.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="INTCLR" class="panel-title">INTCLR - Interrupt Clear</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010018</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>Interrupt Clear</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="28">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="1">OVF
+                                <br>0x0</td>
+<td align="center" colspan="1">FULL
+                                <br>0x0</td>
+<td align="center" colspan="1">HALF
+                                <br>0x0</td>
+<td align="center" colspan="1">EMPTY
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:4</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>OVF</td>
+                            <td>W1C</td>
+                            <td>Write 1 to clear the overflow sticky flag.<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>FULL</td>
+                            <td>W1C</td>
+                            <td>No effect (FULL auto-clears when not full).<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>HALF</td>
+                            <td>W1C</td>
+                            <td>No effect (HALF auto-clears when below threshold).<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>EMPTY</td>
+                            <td>W1C</td>
+                            <td>No effect (EMPTY auto-clears when not empty).<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="FIFO_THRESH" class="panel-title">FIFO_THRESH - FIFO Threshold</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x4001001C</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>FIFO Threshold</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="28">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="4">FIFOTHR
+                                <br>0x8</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:4</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>3:0</td>
+                            <td>FIFOTHR</td>
+                            <td>RW</td>
+                            <td>Half-full threshold. The HALF flag asserts when FIFO count &gt;= FIFOTHR. Default 8 (half of 16-deep FIFO).<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="FIFO_FLUSH" class="panel-title">FIFO_FLUSH - FIFO Flush</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010020</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>FIFO Flush</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="31">RSVD
+                                <br>0x0</td>
+<td align="center" colspan="1">FLUSH
+                                <br>0x0</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:1</td>
+                            <td>RSVD</td>
+                            <td>RO</td>
+                            <td>Reserved<br><br>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>FLUSH</td>
+                            <td>WO</td>
+                            <td>Write 1 to flush the FIFO, reset all pointers, and clear the OVF flag.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 id="ID" class="panel-title">ID - IP Identification</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Address:</h3>
+                <table style="margin:10px">
+                    <tr id="row_0_0_">
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">Instance 0 Address:</span>
+                        </td>
+                        <td class="entry">
+                            <span style="width:32px;display:inline-block;">&#160;</span>
+                            <span class="h5">0x40010024</span>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Description:</h3>
+                <p>IP Identification</p>
+                <h3>Register Fields:</h3>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>31</th><th>30</th><th>29</th><th>28</th><th>27</th><th>26</th><th>25</th><th>24</th><th>23</th><th>22</th><th>21</th><th>20</th><th>19</th><th>18</th><th>17</th><th>16</th><th>15</th><th>14</th><th>13</th><th>12</th><th>11</th><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="32">ID
+                                <br>0xA05B0002</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table style="margin:10px" class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Bits</th>
+                            <th>Name</th>
+                            <th>RW</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>31:0</td>
+                            <td>ID</td>
+                            <td>RO</td>
+                            <td>IP identification. Fixed value 0xA05B0002. Upper 16 bits (0xA05B) = Ambiq OSR block identifier; lower 16 bits (0x0002) = revision 2.<br><br>
+                                </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </div>
+
+
+    </body>
+</body>
+</html>

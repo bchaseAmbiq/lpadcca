@@ -1,0 +1,13 @@
+Fix synthesis: replace initial blocks with case ROM, realistic power
+
+Synthesis now reports 7445 cells, 3829 um2, 28.1 uW (vectorless).
+Previous run pruned 2290 FFs due to non-synthesizable initial blocks.
+
+RTL: lpf_fir.v coefficient arrays replaced with case-based ROM.
+Genus: added optimize_constant_feedback_seqs=false.
+Scripts: added PDT timestamps, results/ subdirectory for sim outputs.
+
+Sim: 16 PASS, 0 FAIL (unchanged from v0.1-sim-syn).
+
+⚙️ Generated with ChipAgents
+Co-Authored-By: ChipAgents <noreply@chipagents.ai>
