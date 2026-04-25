@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPADCCA OSR Signal Chain &mdash; Executive Summary</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         background: #f4f6f9; color: #2c2c2c; font-size: 15px; line-height: 1.6; }
+  header { background: #0d2340; color: #fff; padding: 28px 40px 22px; }
+  header h1 { font-size: 1.55em; font-weight: 600; }
+  header .subtitle { color: #8eb4d8; font-size: 0.88em; margin-top: 6px; }
+  header .meta { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+  header .meta span { background: #1a3a5c; border-radius: 4px; padding: 4px 10px;
+                      font-size: 0.80em; color: #c8dff0; }
+  nav { background: #14304f; padding: 0 40px; display: flex; overflow-x: auto; }
+  nav a { color: #8eb4d8; text-decoration: none; padding: 10px 16px; font-size: 0.83em;
+          white-space: nowrap; border-bottom: 2px solid transparent; display: block; }
+  nav a:hover { color: #fff; border-bottom-color: #4a9fd4; }
+  main { max-width: 1000px; margin: 30px auto; padding: 0 24px 60px; }
+  .card { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+          padding: 26px 30px; margin-bottom: 24px; }
+  .card h2 { font-size: 1.05em; font-weight: 600; color: #0d2340; margin-bottom: 16px;
+             padding-bottom: 10px; border-bottom: 2px solid #e8edf3; }
+  .kpi-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0; }
+  .kpi { background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+         padding: 18px 22px; flex: 1; min-width: 150px; text-align: center; }
+  .kpi .val { font-size: 2em; font-weight: 700; color: #0d7a3e; line-height: 1.1; }
+  .kpi .label { font-size: 0.78em; color: #666; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .kpi .sub { font-size: 0.75em; color: #999; margin-top: 3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
+  th { background: #f0f4f8; text-align: left; padding: 8px 12px; font-weight: 600;
+       color: #3a4a5c; border-bottom: 2px solid #d0dae6; }
+  td { padding: 7px 12px; border-bottom: 1px solid #eaeff5; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8fafc; }
+  .pass { color: #0d7a3e; font-weight: 600; }
+  .fail { color: #c0392b; font-weight: 600; }
+  .marginal { color: #c05a00; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+  .note { background: #f0f7ff; border-left: 3px solid #4a9fd4; padding: 10px 14px;
+          border-radius: 0 4px 4px 0; font-size: 0.85em; color: #2a4a6a; margin-top: 12px; }
+  .warn-note { background: #fff8f0; border-left: 3px solid #e07b00; color: #5a3500; margin-top: 14px;
+               padding: 10px 14px; border-radius: 0 4px 4px 0; font-size: 0.85em; }
+  .good-note { background: #f0fbf4; border-left: 3px solid #2ea854; color: #1a4a2a; margin-top: 14px;
+               padding: 10px 14px; border-radius: 0 4px 4px 0; font-size: 0.85em; }
+  p { margin-top: 10px; font-size: 0.9em; color: #444; }
+  .section-h { font-size: 0.95em; font-weight: 600; color: #0d2340; margin: 20px 0 8px;
+               padding-top: 16px; border-top: 1px solid #e8edf3; }
+  footer { text-align: center; font-size: 0.75em; color: #aaa; padding: 20px; }
+  code { background: #f0f4f8; padding: 1px 5px; border-radius: 3px; font-size: 0.88em; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LPADCCA OSR Signal Chain &mdash; Executive Summary</h1>
+  <div class="subtitle">Low-Power Audio Decimation IP</div>
+  <div class="meta">
+    <span>2026-04-24</span>
+    <span>TSMC 12nm FF+</span>
+    <span>V<sub>DD</sub> = 0.668 V</span>
+    <span>ADC clk = 3.072 MHz</span>
+    <span>Cadence Genus 23.12 &mdash; TT / 25&deg;C</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#power">Power</a>
+  <a href="#area">Area</a>
+  <a href="#performance">Performance</a>
+  <a href="#interface">Interface</a>
+  <a href="#status">Test Status</a>
+  <a href="#open">Open Items</a>
+</nav>
+
+<main>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="val">6.21</div><div class="label">&mu;W Total Power</div><div class="sub">NB mode, VCD-annotated</div></div>
+    <div class="kpi"><div class="val">3,347</div><div class="label">&mu;m&sup2; Cell Area</div><div class="sub">7,356 cells</div></div>
+    <div class="kpi"><div class="val">&minus;78</div><div class="label">dB THD+N (NB)</div><div class="sub">1 kHz, &minus;3 dBFS</div></div>
+    <div class="kpi"><div class="val">3</div><div class="label">Audio Modes</div><div class="sub">8 / 16 / 32 kHz out</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Overview</h2>
+    <p>LPADCCA converts 12-bit LPADC samples (3.072 MHz) to PCM audio at 8, 16, or 32 kHz.
+       The primary design goal is <strong>sub-10 &mu;W total power</strong> at the 12nm 0.668 V supply.</p>
+    <p>Signal chain: ADC capture &rarr; CIC decimator (sinc&sup3;) &rarr; 4&times; HB19 halfband stages &rarr;
+       LPF FIR &rarr; DGA (programmable gain) &rarr; HPF (DC block) &rarr; 16-deep output FIFO &rarr;
+       APB3 slave (Cortex-M55).</p>
+    <table style="margin-top:14px;">
+      <tr><th>Mode</th><th>Name</th><th>Output Rate</th><th>Decimation Ratio</th></tr>
+      <tr><td>0</td><td>NB</td><td>8 kHz</td><td>384&times;</td></tr>
+      <tr><td>1</td><td>WB</td><td>16 kHz</td><td>192&times;</td></tr>
+      <tr><td>2</td><td>SWB</td><td>32 kHz</td><td>96&times;</td></tr>
+    </table>
+  </div>
+
+  <div class="card" id="power">
+    <h2>Power Consumption</h2>
+    <p>Estimated with Cadence Genus VCD annotation from RTL simulation
+       (NB mode, 1 kHz sine at &minus;3 dBFS, 60,000 ADC cycles).</p>
+    <table style="margin-top:14px;">
+      <tr><th>Category</th><th>Power</th><th>% of Total</th></tr>
+      <tr><td>Leakage</td><td>3.61 &mu;W</td><td>58.2%</td></tr>
+      <tr><td>Dynamic &mdash; Internal (cell)</td><td>1.70 &mu;W</td><td>27.4%</td></tr>
+      <tr><td>Dynamic &mdash; Switching (net)</td><td>0.90 &mu;W</td><td>14.4%</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>6.21 &mu;W</strong></td><td><strong>100%</strong></td></tr>
+    </table>
+    <div class="good-note"><strong>Power target of &lt; 10 &mu;W achieved &mdash; 6.21 &mu;W, 38% margin.</strong></div>
+    <p>Leakage dominates (58%) due to always-on filter delay-line registers at 0.668 V.
+       NB mode is the lowest-power operating point (most stages clock-gated). WB and SWB
+       will be modestly higher as more clock domains remain active. Worst-case 100% toggle
+       activity estimate: 14.6 &mu;W. 17 integrated clock-gating cells are in place.</p>
+  </div>
+
+  <div class="card" id="area">
+    <h2>Area</h2>
+    <div class="two-col">
+      <div>
+        <table>
+          <tr><th>Metric</th><th>Value</th></tr>
+          <tr><td>Total cells</td><td>7,356</td></tr>
+          <tr><td><strong>Total cell area</strong></td><td><strong>3,347 &mu;m&sup2;</strong></td></tr>
+          <tr><td>Sequential (flip-flops)</td><td>2,284 cells &mdash; 1,775 &mu;m&sup2; (53%)</td></tr>
+          <tr><td>Combinational logic</td><td>4,276 cells &mdash; 1,505 &mu;m&sup2; (45%)</td></tr>
+          <tr><td>Clock gates (integrated)</td><td>17 cells &mdash; 10 &mu;m&sup2; (&lt;1%)</td></tr>
+          <tr><td>Full adder cells (FA1D1)</td><td>1,366 instances &mdash; 957 &mu;m&sup2;</td></tr>
+        </table>
+      </div>
+      <div>
+        <table>
+          <tr><th>Block</th><th>Area (&mu;m&sup2;)</th><th>%</th></tr>
+          <tr><td>HB19 halfband mux</td><td>1,623</td><td>48.5%</td></tr>
+          <tr><td>LPF FIR (21-tap)</td><td>670</td><td>20.0%</td></tr>
+          <tr><td>HB1 FIR</td><td>325</td><td>9.7%</td></tr>
+          <tr><td>CIC filter (sinc&sup3;)</td><td>301</td><td>9.0%</td></tr>
+          <tr><td>DGA</td><td>206</td><td>6.2%</td></tr>
+          <tr><td>HPF (1st-order IIR)</td><td>191</td><td>5.7%</td></tr>
+          <tr><td>ADC capture</td><td>31</td><td>0.9%</td></tr>
+        </table>
+      </div>
+    </div>
+    <p>HB19 (four halfband stages) is the dominant block at 48% of area. LPF and HB1 account
+       for another 30%. Area is shift-register-heavy due to filter delay lines.</p>
+  </div>
+
+  <div class="card" id="performance">
+    <h2>Audio Performance</h2>
+    <p>Results from RTL simulation (<code>sim_results_0424_1645</code>). 12-bit signed PCM output.
+       No overflow at 0 dBFS (&plusmn;2047 peak) input.</p>
+
+    <div class="section-h">THD+N &mdash; 1 kHz tone, &minus;3 dBFS</div>
+    <table>
+      <tr><th>Mode</th><th>THD+N</th><th>Dominant Distortion</th></tr>
+      <tr><td>NB (8 kHz)</td><td>&minus;78 dB</td><td>H3 &asymp; &minus;78 dB (CIC normalization quantization)</td></tr>
+      <tr><td>WB (16 kHz)</td><td>&minus;77 dB</td><td>H3</td></tr>
+      <tr><td>SWB (32 kHz)</td><td>&minus;74 dB</td><td>H3</td></tr>
+    </table>
+
+    <div class="section-h">ITU-T P.50 Signal-to-Distortion Ratio (SDR)</div>
+    <div class="two-col" style="margin-top:10px;">
+      <div>
+        <p style="font-size:0.82em;color:#666;font-weight:600;margin-bottom:4px;">NB &mdash; Frequency sweep (&minus;16 dBm0)</p>
+        <table>
+          <tr><th>Freq (Hz)</th><th>SDR (dB)</th><th></th></tr>
+          <tr><td>315</td><td>59.2</td><td class="pass">PASS</td></tr>
+          <tr><td>408</td><td>&gt;99</td><td class="pass">PASS</td></tr>
+          <tr><td>510</td><td>60.1</td><td class="pass">PASS</td></tr>
+          <tr><td>816</td><td>30.0</td><td class="pass">PASS</td></tr>
+          <tr><td>1020</td><td>61.7</td><td class="pass">PASS</td></tr>
+        </table>
+      </div>
+      <div>
+        <p style="font-size:0.82em;color:#666;font-weight:600;margin-bottom:4px;">NB &mdash; Level sweep at 1020 Hz</p>
+        <table>
+          <tr><th>Level (dBm0)</th><th>SDR (dB)</th><th></th></tr>
+          <tr><td>&minus;6</td><td>72.2</td><td class="pass">PASS</td></tr>
+          <tr><td>&minus;10</td><td>66.9</td><td class="pass">PASS</td></tr>
+          <tr><td>&minus;16</td><td>61.7</td><td class="pass">PASS</td></tr>
+          <tr><td>&minus;20</td><td>58.5</td><td class="pass">PASS</td></tr>
+          <tr><td>&minus;25</td><td>53.0</td><td class="pass">PASS</td></tr>
+          <tr><td>&minus;31</td><td>48.2</td><td class="pass">PASS</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="note">WB freq sweep: 55&ndash;99+ dB SDR, all PASS &nbsp;|&nbsp; SWB freq sweep: 48&ndash;66 dB SDR, all PASS</div>
+
+    <div class="section-h">Frequency Response</div>
+    <p>SWB passband is within ~2 dB. NB and WB show up to ~3 dB droop at band edges
+       due to HB/LPF passband ripple and HPF interaction (open issue #18). Fix: equiripple
+       LPF coefficient redesign &mdash; no RTL or power changes required.</p>
+  </div>
+
+  <div class="card" id="interface">
+    <h2>APB Register Interface</h2>
+    <table>
+      <tr><th>Offset</th><th>Register</th><th>Access</th><th>Description</th></tr>
+      <tr><td>0x00</td><td>CTRL</td><td>RW</td><td>mode[1:0], enable, dga_shift[3:0]</td></tr>
+      <tr><td>0x04</td><td>DGA_FRAC</td><td>RW</td><td>Programmable gain fraction (Q16)</td></tr>
+      <tr><td>0x08</td><td>FIFO_STATUS</td><td>RO/W1C</td><td>[0]empty [1]half [2]full [3]ovf [7:4]count</td></tr>
+      <tr><td>0x0C</td><td>FIFO_DATA</td><td>RO</td><td>Pop and return top sample (sign-extended 32b)</td></tr>
+      <tr><td>0x10</td><td>INTEN</td><td>RW</td><td>Per-flag interrupt enable [3:0]</td></tr>
+      <tr><td>0x14</td><td>INTSTAT</td><td>RO</td><td>Raw interrupt status [3:0]</td></tr>
+      <tr><td>0x18</td><td>INTCLR</td><td>W1C</td><td>Clear sticky flags (overflow)</td></tr>
+      <tr><td>0x1C</td><td>FIFO_THRESH</td><td>RW</td><td>Half-full threshold [3:0], default 8</td></tr>
+      <tr><td>0x20</td><td>FIFO_FLUSH</td><td>WO</td><td>Write 1 to flush FIFO and clear all flags</td></tr>
+      <tr><td>0x24</td><td>ID</td><td>RO</td><td>0xA05B_0002</td></tr>
+    </table>
+    <p>Output FIFO: 16-deep &times; 16-bit; empty/half/full/overflow flags; independent per-flag
+       interrupt enables; IRQ &rarr; M55 NVIC. Driver: <code>sw/driver/osr_drv.{h,c}</code>.
+       Register docs: <code>docs/osr_regs.html</code>.</p>
+  </div>
+
+  <div class="card" id="status">
+    <h2>Test Status</h2>
+    <table>
+      <tr><th>Test</th><th>NB (8 kHz)</th><th>WB (16 kHz)</th><th>SWB (32 kHz)</th></tr>
+      <tr><td>THD+N</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>ITU-T P.50 SDR</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>Square-wave stress (0 dBFS)</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>Full-scale 0 dBFS, no overflow</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>Mode switch (all 3 transitions)</td><td class="pass">PASS</td><td class="pass">PASS</td><td class="pass">PASS</td></tr>
+      <tr><td>Bit-exact vs C model</td><td colspan="3" style="color:#888;font-style:italic;">Infrastructure in place &mdash; full run pending</td></tr>
+      <tr><td>Passband flatness (&plusmn;1 dB spec)</td><td class="fail">FAIL</td><td class="fail">FAIL</td><td class="marginal">Marginal</td></tr>
+    </table>
+  </div>
+
+  <div class="card" id="open">
+    <h2>Open Items</h2>
+    <table>
+      <tr><th>#</th><th>Issue</th><th>Impact</th><th>Fix</th></tr>
+      <tr>
+        <td>18</td>
+        <td>Passband flatness &mdash; NB/WB exceed &plusmn;1 dB spec</td>
+        <td>Audio quality</td>
+        <td>Parks-McClellan equiripple LPF redesign &mdash; coefficient change only, zero area/power impact</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>NB gain ~2 dB low at 1 kHz</td>
+        <td>Audio quality</td>
+        <td>Root cause is HB filter droop &mdash; resolved by #18 fix</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>FPGA test image (Stratix 10)</td>
+        <td>Board validation</td>
+        <td>Not started</td>
+      </tr>
+    </table>
+    <div class="warn-note">
+      The passband flatness failure does not affect THD+N or P.50 SDR results. The fix requires
+      only new LPF coefficient values &mdash; no RTL restructuring, no re-synthesis, no power impact.
+    </div>
+  </div>
+
+</main>
+<footer>LPADCCA OSR Signal Chain &mdash; 2026-04-24 &mdash; Ambiq Micro</footer>
+</body>
+</html>
