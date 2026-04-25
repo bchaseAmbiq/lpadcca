@@ -237,3 +237,15 @@ Yes, let's run all the sims and if that works make the GH update
 ## Prompt 59 — 2026-04-24
 
 check sim_results_0424_1645.zip
+
+## Prompt 60 — 2026-04-24
+
+Why are we rerunning the syn?
+
+## Prompt 61 — 2026-04-24
+
+check all the issues in the git repo. Is #4 really still blocked?
+
+## Prompt 62 — 2026-04-24
+
+yes
